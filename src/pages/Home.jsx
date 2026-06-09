@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import slide1 from "../assets/lama.gif";
+import slide1 from "../assets/lama.png";
 import slide2 from "../assets/home2.jpg";
 import slide3 from "../assets/home3.jpg";
 import provider1 from "../assets/provider1.jpg";
