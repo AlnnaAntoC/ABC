@@ -1,0 +1,68 @@
+/* ===== TOP HEADER BAR ===== */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, var(--navy, #0b1f3a) 0%, #0e3a5a 100%);
+  color: rgba(255,255,255,0.82);
+  padding: 6px 5%;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  z-index: 1200;
+  border-bottom: 1px solid rgba(0, 196, 204, 0.18);
+}
+
+.header-left {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header-left span {
+  letter-spacing: 0.2px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-right a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  color: rgba(255,255,255,0.72);
+  font-size: 0.85rem;
+  transition: background 0.25s, color 0.25s;
+}
+
+.header-right a:hover {
+  background: rgba(0, 196, 204, 0.18);
+  color: var(--teal-light, #72f7ec);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .top-header {
+    height: 32px;
+    justify-content: center;
+  }
+
+  .header-left {
+    display: none;
+  }
+
+  .header-right a {
+    width: 26px;
+    height: 26px;
+  }
+}

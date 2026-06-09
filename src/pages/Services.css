@@ -1,0 +1,192 @@
+.services-page {
+  overflow-x: hidden;
+}
+
+.services-hero {
+  height: 52vh;
+  width: 100%;
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 112px;
+}
+
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(7, 18, 36, 0.90) 0%,
+    rgba(0, 100, 130, 0.78) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.services-hero-content {
+  max-width: 860px;
+  padding: 0 24px;
+  color: #fff;
+}
+
+.services-hero-content h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.services-hero-content p {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  line-height: 1.75;
+  opacity: 0.9;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Divisions */
+.medical-division,
+.trading-division {
+  padding: 70px 7%;
+  background: var(--off-white, #f4f8fb);
+}
+
+.section-heading {
+  font-family: 'Syne', sans-serif;
+  text-align: center;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 52px;
+  color: var(--navy, #0b1f3a);
+  letter-spacing: -0.3px;
+}
+
+/* Layout */
+.medical-layout {
+  display: flex;
+  gap: 36px;
+}
+
+/* Filter Panel */
+.filter-panel {
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.filter-panel button {
+  padding: 13px 18px;
+  border: none;
+  background: var(--white, #fff);
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-dark, #0d1f35);
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.filter-panel button:hover {
+  background: #eaf6f9;
+  border-left-color: var(--teal, #00c4cc);
+  color: var(--navy, #0b1f3a);
+}
+
+.filter-panel button.active {
+  background: var(--navy, #0b1f3a);
+  color: var(--teal-light, #72f7ec);
+  border-left-color: var(--teal-light, #72f7ec);
+  font-weight: 600;
+}
+
+/* Content */
+.services-content { flex: 1; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 22px;
+}
+
+.service-card {
+  background: var(--white, #fff);
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(11, 31, 58, 0.07);
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(11, 31, 58, 0.13);
+  border-color: rgba(0, 196, 204, 0.2);
+}
+
+.service-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.service-card h3 {
+  font-family: 'Syne', sans-serif;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy, #0b1f3a);
+}
+
+/* Detail view */
+.service-detail {
+  background: var(--white, #fff);
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(11, 31, 58, 0.08);
+}
+
+.service-detail h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--navy, #0b1f3a);
+}
+
+.service-detail img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 22px;
+}
+
+.service-detail p {
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: var(--text-mid, #3a5068);
+}
+
+@media (max-width: 768px) {
+  .services-hero { margin-top: 112px; background-attachment: scroll; }
+  .medical-layout { flex-direction: column; }
+  .filter-panel { width: 100%; flex-direction: row; flex-wrap: wrap; }
+  .filter-panel button { flex: 1 1 auto; border-left: none; border-bottom: 3px solid transparent; text-align: center; }
+  .filter-panel button.active { border-bottom-color: var(--teal-light, #72f7ec); border-left: none; }
+}

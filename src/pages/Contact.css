@@ -1,0 +1,202 @@
+:root {
+  --color-primary-light: #00c4cc;
+  --color-primary-dark: #0288d1;
+  --color-text-dark: #0d1f35;
+  --color-text-light: #f9f9f9;
+  --card-background-blur: 10px;
+  --card-border-opacity: 0.18;
+  --card-shadow-opacity: 0.18;
+}
+
+.contact-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--off-white, #f4f8fb);
+  padding-top: 0; /* header+navbar offset handled by hero margin */
+}
+
+/* ===== HERO ===== */
+.services-hero {
+  height: 52vh;
+  width: 100%;
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 112px;
+}
+
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(7, 18, 36, 0.90) 0%,
+    rgba(4, 67, 90, 0.88) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.services-hero-content {
+  max-width: 800px;
+  padding: 0 24px;
+  color: var(--white, #fff);
+}
+
+.services-hero-content h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+/* ===== MAIN CONTENT ===== */
+.contact-main-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 48px auto 80px auto;
+  position: relative;
+  z-index: 3;
+}
+
+.contact-cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 960px) {
+  .contact-cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== GLASSMORPHISM CARDS ===== */
+.glassmorphic-card {
+  padding: 48px 44px;
+  border-radius: 24px;
+  backdrop-filter: blur(var(--card-background-blur));
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 196, 204, 0.14);
+  box-shadow: 0 10px 40px rgba(11, 31, 58, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glassmorphic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(11, 31, 58, 0.16);
+}
+
+.card-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--navy, #0b1f3a);
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+
+/* LEFT CARD */
+.get-in-touch-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(11, 31, 58, 0.03);
+}
+
+.card-text {
+  font-size: 0.97rem;
+  line-height: 1.82;
+  margin-bottom: 16px;
+  color: var(--text-mid, #3a5068);
+  position: relative;
+  z-index: 2;
+}
+
+.card-background-art {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 0deg,
+    #0b1f3a,
+    #0e4f6e,
+    #88d9d8,
+    #2a8a76,
+    #50f4ad
+  );
+  animation: rotate-gradient 30s linear infinite;
+  opacity: 0.18;
+  z-index: 0;
+}
+
+@keyframes rotate-gradient {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* RIGHT CARD */
+.contact-info-card {
+  background: rgba(220, 238, 248, 0.55);
+}
+
+.contact-info-heading {
+  font-size: 2.2rem;
+  font-weight: 800;
+  font-family: 'Syne', sans-serif;
+  color: var(--navy, #0b1f3a);
+  padding-bottom: 12px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid rgba(0, 196, 204, 0.25);
+}
+
+.contact-detail {
+  margin-bottom: 22px;
+}
+
+.detail-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--teal, #00c4cc);
+  margin-bottom: 6px;
+}
+
+.detail-content {
+  font-size: 0.95rem;
+  color: var(--text-dark, #0d1f35);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.detail-link {
+  color: var(--navy, #0b1f3a);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.detail-link:hover {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .services-hero { height: 44vh; margin-top: 112px; background-attachment: scroll; }
+  .services-hero-content h1 { font-size: 2.2rem; }
+  .glassmorphic-card { padding: 34px 28px; }
+  .card-heading, .contact-info-heading { font-size: 1.8rem; }
+}
